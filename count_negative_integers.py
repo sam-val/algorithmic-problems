@@ -20,17 +20,18 @@ def solve_optimal(m):
     """
     for sorted matrix
     """
+    if not len(m) > 0:
+        return 0
     # traverse from top right
     rs = 0
-    walk = len(m[0]) - 1
+    walk = len(m[0]) - 1 # top right
     for row in m:
         while walk >= 0:
             if row[walk] < 0:
                 rs += (walk + 1)
                 break
-            walk -= 1
+            walk -= 1 
     return rs
-
     
 def main():
     matrix = [[-3,-2,-1,1],[-2,2,3,4],[4,5,7,8]]
